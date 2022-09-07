@@ -1,0 +1,30 @@
+import java.util.*;
+public class primeno {
+    public static void main(String[] args){
+        try{
+            int n,sum=0;
+            System.out.println("enter number:");
+            Scanner sc=new Scanner(System.in);
+            n=sc.nextInt();
+            if(n<0){
+                throw new ArithmeticException("invalid due to negative value.");
+            }
+            while(n>0)
+            {
+                int r = n % 10;
+                sum = (sum*10)+ r;
+                n = n / 10;
+            }
+            System.out.println("reversed number is:");
+            System.out.println(sum);
+        }
+        catch (ArithmeticException e)
+        {
+            System.out.println("invalid due to negative value.");
+        }
+        catch (Exception e)
+        {
+            System.out.println("invalid due to alpha numeric and special characters.");
+        }
+    }
+}
