@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class compositeinarray {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter the array size: ");
+        int n=sc.nextInt();
+        int s=0,c=0;
+        int a[]=new int[100];
+        System.out.println("enter the elements: ");
+        for(int i=1;i<=n;i++){
+            a[i]=sc.nextInt();
+        }
+        for(int i=1;i<=n;i++){
+            for(int j=2;j<n;j++){
+                if(i%j==0){
+                    s=s+1;
+                }
+            }
+            if(s>1){
+                c=c+1;
+            }
+        }
+        System.out.print("no:of composite numbers: "+c);
+    }
+}
